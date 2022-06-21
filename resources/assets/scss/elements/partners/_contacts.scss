@@ -1,0 +1,32 @@
+.partners-contacts {
+    & + & {
+        margin-top: var(--spacer);
+    }
+
+
+    &__heading {
+        font-weight: 500;
+        margin-bottom: var(--spacer);
+    }
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__item {
+        & + & {
+            margin-top: var(--spacer-s);
+        }
+    }
+
+    &__icon {
+        color: rgb(var(--color-primary));
+        margin-right: rem(3px);
+    }
+
+    &__label {
+
+    }
+}

@@ -1,0 +1,21 @@
+@function hexToRGB($hex) {
+    @return red($hex), green($hex), blue($hex);
+}
+
+@function rem($size, $font-size: $font-size) {
+    $font-size: $font-size + 0px;
+    $remSize: $size / $font-size;
+
+    @return #{$remSize}rem;
+}
+
+@function em($size, $font-size: $font-size) {
+    $font-size: $font-size + 0px;
+    $remSize: $size / $font-size;
+
+    @return #{$remSize}em;
+}
+
+@function unquote-content($code) {
+    @return unquote("\"#{$code}\"");
+}

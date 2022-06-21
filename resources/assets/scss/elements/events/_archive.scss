@@ -1,0 +1,68 @@
+.events-archive {
+    @include row();
+
+    &__content {
+        @include col(12);
+    }
+
+    &__aside {
+        display: none;
+    }
+}
+
+.events-archive-grid {
+    @include row();
+    margin-bottom: calc(var(--grid-gutter) * -1);
+
+    &__item {
+        @include col(12);
+        margin-bottom: var(--grid-gutter);
+    }
+}
+
+@include breakpoint('sm') {
+    .events-archive-grid {
+        &__item {
+            @include col(6);
+
+            &--full {
+                @include col(12);
+            }
+        }
+    }
+}
+
+@include breakpoint('lg') {
+    .events-archive-grid {
+        &__item {
+            @include col(4);
+
+            &--full {
+                @include col(12);
+            }
+        }
+    }
+}
+
+@include breakpoint('xl') {
+    .events-archive {
+        @include row();
+
+        &__content {
+            @include col(9);
+        }
+
+        &__aside {
+            @include col(3);
+            display: block;
+        }
+    }
+
+    .events-archive-grid {
+        &__item {
+            &--user-profile {
+                @include col(3);
+            }
+        }
+    }
+}

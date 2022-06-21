@@ -1,0 +1,39 @@
+.dropdown {
+    &__popover {
+        position: absolute;
+        z-index: 10;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    &__trigger {
+
+    }
+
+    &--open {
+        .dropdown__popover {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    &--position-top-right {
+        top: 0;
+        right: 0;
+    }
+
+    &--position-top-left {
+        top: 0;
+        left: 0;
+    }
+
+    &--position-bottom-right {
+        bottom: 0;
+        left: 0;
+    }
+
+    &--position-bottom-left {
+        bottom: 0;
+        left: 0;
+    }
+}

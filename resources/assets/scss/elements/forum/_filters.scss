@@ -1,0 +1,23 @@
+.forum-filters-form {
+    margin-bottom: var(--spacer);
+
+    &__form {
+
+    }
+
+    &__layout {
+        @include row();
+    }
+
+    &__col {
+        @include col(12);
+    }
+}
+
+@include breakpoint('md') {
+    .forum-filters-form {
+        &__col {
+            @include col(3);
+        }
+    }
+}

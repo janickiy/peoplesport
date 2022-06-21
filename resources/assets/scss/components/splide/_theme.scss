@@ -1,0 +1,28 @@
+$arrow-button-size: rem(30px);
+$arrow-size: rem(20px);
+$dot-size: #{rem(12px)};
+$progress-bar-height: #{rem(3px)};
+
+@import 'object/modifiers/nav';
+@import 'object/modifiers/ttb';
+
+@import 'object/objects/arrow';
+@import 'object/objects/pagination';
+@import 'object/objects/progress';
+
+
+.splide {
+    &--pagination-float {
+        .splide__pagination {
+            position: absolute;
+            padding: 0;
+            bottom: var(--spacer);
+        }
+    }
+
+    &--pagination-left {
+        .splide__pagination {
+            justify-content: flex-start;
+        }
+    }
+}

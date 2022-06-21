@@ -1,0 +1,58 @@
+@mixin row($justify-content: null, $align-items: null) {
+    margin-left: rem(-$grid-gutter / 2);
+    margin-right: rem(-$grid-gutter / 2);
+    display: flex;
+    flex-wrap: wrap;
+
+    @if type-of($justify-content) != null {
+        justify-content: $justify-content;
+    }
+
+    @if type-of($align-items) != null {
+        align-items: $align-items;
+    }
+}
+
+@mixin col($number: 'auto') {
+    @if type-of($number) == number {
+        flex: 0 0 (100% / $grid-columns * $number);
+        max-width: 100% / $grid-columns * $number;
+        padding-left: #{rem($grid-gutter)} / 2;
+        padding-right: #{rem($grid-gutter)} / 2;
+    } @else if $number == 'auto' {
+        box-sizing: border-box;
+        flex-grow: 1;
+        flex-basis: 0;
+        max-width: 100%;
+    }
+
+    padding-left: rem($grid-gutter / 2);
+    padding-right: rem($grid-gutter / 2);
+}
+
+@mixin container() {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: rem($grid-gutter / 2);
+    padding-right: rem($grid-gutter / 2);
+
+    @each $key, $_ in $container-sizes {
+        @media only screen and (min-width: #{rem(map-get($container-breakpoints, $key))}) {
+            width: 100%;
+
+            @if $key == 'xs' {
+                max-width: 100%;
+            } @else  {
+                max-width: rem(map-get($container-sizes, $key));
+            }
+        }
+    }
+}
+
+@mixin breakpoint($breakpoint: 'xs') {
+    @if map-has-key($container-breakpoints, $breakpoint) {
+        @media only screen and (min-width: #{rem(map-get($container-breakpoints, $breakpoint))}) {
+            @content
+        }
+    }
+}

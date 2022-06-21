@@ -1,0 +1,68 @@
+.user-search-card {
+    text-align: center;
+    position: relative;
+
+    &__info {
+        margin-bottom: var(--spacer-s);
+        border: rem(1px) solid rgb(var(--color-neutral));
+    }
+
+    &__avatar {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    &__link {
+        color: rgb(var(--color-primary));
+        text-decoration: none;
+        text-align: center;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.user-search-card-control {
+    position: absolute;
+    top: rem(1px);
+    right: rem(1px);
+
+    &__item {
+        & + & {
+            margin-top: rem(1px);
+        }
+    }
+}
+
+.user-search-card-control-item {
+    &__link {
+        text-decoration: none;
+        width: rem(20px);
+        height: rem(20px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(var(--color-base), .6);
+        color: rgb(var(--color-inverse));
+        font-size: var(--font-size-s);
+
+        &:hover {
+            background-color: rgba(var(--color-primary), .6);
+        }
+
+        &--active {
+            color: rgb(var(--color-accent));
+
+            &:hover {
+                color: rgb(var(--color-inverse));
+                background-color: rgba(var(--color-accent), .6);
+            }
+        }
+    }
+
+    &__icon {
+
+    }
+}

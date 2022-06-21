@@ -1,0 +1,77 @@
+.partners-banner {
+    padding: var(--spacer-l) var(--spacer-xs);
+    background: {
+        image: url('../img/partners-banner-background.png');
+        repeat: no-repeat;
+        size: cover;
+    };
+
+    &__heading, &__text {
+        font-weight: 700;
+        text-shadow: 0 rem(2px) rem(12px) rgba(var(--color-shadow), .27);
+        color: rgb(var(--color-inverse));
+    }
+
+    &__heading {
+        font-size: rem(20px);
+        margin-bottom: var(--spacer-l);
+    }
+
+    &__text {
+        font-size: rem(18px);
+    }
+}
+
+@include breakpoint('sm') {
+    .partners-banner {
+        &__heading {
+            font-size: rem(25px);
+        }
+
+        &__text {
+            font-size: rem(20px);
+        }
+    }
+}
+
+@include breakpoint('md') {
+    .partners-banner {
+        &__heading {
+            font-size: rem(30px);
+        }
+
+        &__text {
+            font-size: rem(23px);
+        }
+    }
+}
+
+@include breakpoint('lg') {
+    .partners-banner {
+        padding: var(--spacer-l) var(--spacer-m);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: rem(350px);
+
+        &__heading {
+            font-size: rem(40px);
+        }
+
+        &__text {
+            font-size: rem(30px);
+        }
+    }
+}
+
+@include breakpoint('xl') {
+    .partners-banner {
+        &__heading {
+            font-size: rem(50px);
+        }
+
+        &__text {
+            font-size: rem(35px);
+        }
+    }
+}

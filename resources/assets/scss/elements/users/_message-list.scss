@@ -1,0 +1,151 @@
+.user-message-list {
+    &__item {
+        & + & {
+            margin-top: var(--spacer);
+        }
+    }
+}
+
+.user-message-item {
+    display: flex;
+    padding: var(--spacer-s) 0;
+    color: rgb(var(--color-base));
+    text-decoration: none;
+
+    &:hover {
+        background-color: rgb(var(--color-neutral-light));
+    }
+
+    &__preview {
+        margin-right: var(--spacer-x);
+        flex-shrink: 0;
+        position: relative;
+    }
+
+    &__info {
+        width: 100%;
+        position: relative;
+
+        &:after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: rem(1px);
+            background-color: rgb(var(--color-neutral));
+            position: absolute;
+            bottom: calc(var(--spacer-s) * -1);
+            left: 0;
+        }
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: var(--spacer);
+    }
+
+    &__name {
+        font-weight: 500;
+        margin-bottom: var(--spacer-xs);
+    }
+
+    &__nickname {
+        margin-bottom: var(--spacer-xs);
+
+        a {
+            color: rgb(var(--color-primary));
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        span {
+            color: rgb(var(--color-primary));
+        }
+    }
+
+    &__action {
+        a {
+            color: rgb(var(--color-secondary));
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    &__tag {
+        font-size: var(--font-size-xs);
+        padding: var(--spacer-xs) var(--spacer-s);
+        background-color: rgb(var(--color-accent));
+        font-weight: 300;
+        border-radius: rem(4px);
+        margin-bottom: var(--spacer-xs);
+    }
+
+    &__date {
+        //margin-left: auto;
+        color: rgb(var(--color-neutral));
+    }
+
+    &__avatar {
+        display: block;
+        height: rem(70px);
+        width: rem(70px);
+        border: rem(1px) solid rgb(var(--color-neutral));
+        border-radius: 50%;
+    }
+
+    &__status {
+        width: rem(10px);
+        height: rem(10px);
+        position: absolute;
+        top: rem(60px);
+        right: rem(3px);
+        border-radius: 50%;
+        background-color: rgb(var(--color-neutral));
+
+        &--online {
+            background-color: rgb(var(--color-online));
+        }
+    }
+
+    &__content {
+
+    }
+}
+
+@include breakpoint('md') {
+    .user-message-item {
+        &__header {
+            flex-direction: row;
+            align-items: center;
+
+            &--full {
+                height: 100%;
+            }
+        }
+
+        &__name {
+            font-weight: 500;
+            margin-right: var(--spacer);
+            margin-bottom:0;
+        }
+
+        &__nickname {
+            margin-right: var(--spacer);
+            margin-bottom: 0;
+        }
+
+        &__tag {
+            margin-bottom: 0;
+        }
+
+        &__date {
+            margin-left: auto;
+        }
+    }
+}

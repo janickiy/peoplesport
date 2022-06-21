@@ -1,0 +1,26 @@
+.header-main {
+    @include row();
+    align-items: center;
+
+    &__left {
+        @include col(8)
+    }
+
+    &__right {
+        @include col(4)
+    }
+}
+
+@include breakpoint('lg') {
+    .header-main {
+        align-items: initial;
+
+        &__left {
+            @include col(4)
+        }
+
+        &__right {
+            @include col(8)
+        }
+    }
+}

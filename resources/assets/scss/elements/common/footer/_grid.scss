@@ -1,0 +1,39 @@
+.footer-grid {
+    @include row();
+
+    &__item {
+        @include col(12);
+
+        &--widget {
+
+        }
+    }
+}
+
+@include breakpoint('sm') {
+    .footer-grid {
+        &__item {
+            &--widget {
+                @include col(6)
+            }
+        }
+    }
+}
+
+@include breakpoint('md') {
+    .footer-grid {
+        &__item {
+            &--widget {
+                @include col(4)
+            }
+        }
+    }
+}
+
+@include breakpoint('xl') {
+    .footer-grid {
+        &__item {
+            @include col(3)
+        }
+    }
+}

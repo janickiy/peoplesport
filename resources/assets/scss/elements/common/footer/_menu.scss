@@ -1,0 +1,35 @@
+.footer-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    &__item {
+        line-height: 1;
+
+        &:before {
+            content: '';
+            width: 100%;
+            height: rem(1px);
+            display: block;
+            background-color: rgba(var(--color-neutral-light), .2);
+            margin: var(--spacer-s) 0;
+        }
+    }
+}
+
+.footer-menu-item {
+    &__link {
+        text-decoration: none;
+        color: rgb(var(--color-inverse));
+
+        &:hover {
+            color: rgb(var(--color-accent));
+        }
+    }
+
+    &--active {
+        .footer-menu-item__link {
+            color: rgb(var(--color-accent));
+        }
+    }
+}

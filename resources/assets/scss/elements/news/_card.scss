@@ -1,0 +1,38 @@
+.news-card {
+    &__preview {
+        margin-bottom: var(--spacer-m);
+    }
+
+    &__meta {
+        margin-bottom: var(--spacer);
+    }
+
+    &__title {
+        font-size: var(--font-size-m);
+        margin-bottom: var(--spacer-m);
+        height: rem(60px);
+        overflow: hidden;
+    }
+
+    &__more {
+
+    }
+}
+
+.news-card-preview {
+    display: block;
+    text-decoration: none;
+
+    &__image {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+.news-card-meta {
+    &__item {
+        font-size: var(--font-size-s);
+        color: rgb(var(--color-neutral-darken))
+    }
+}

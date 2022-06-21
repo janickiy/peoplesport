@@ -1,0 +1,60 @@
+.about-capabilities {
+    &__heading {
+
+    }
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__item {
+
+    }
+}
+
+.about-capabilities-item {
+    padding-left: rem(40px);
+    position: relative;
+
+    &__counter {
+        width: rem(30px);
+        height: rem(30px);
+        background-color: rgb(var(--color-accent));
+        border-radius: 50%;
+        font-size: rem(18px);
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    &__heading {
+
+    }
+
+    &__content {
+
+    }
+
+    & + & {
+        margin-top: var(--spacer-x);
+    }
+}
+
+@include breakpoint('md') {
+    .about-capabilities-item {
+        padding-left: rem(75px);
+
+        &__counter {
+            width: rem(50px);
+            height: rem(50px);
+            font-size: rem(25px);
+            top: rem(-5px);
+        }
+    }
+}

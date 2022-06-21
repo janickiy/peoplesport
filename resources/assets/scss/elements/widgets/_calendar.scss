@@ -1,0 +1,66 @@
+.widget-calendar {
+    &__year {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--spacer-s) var(--spacer);
+        background-color: rgb(var(--color-neutral-light));
+    }
+
+    &__prev, &__next {
+        color: rgb(var(--color-base));
+        text-decoration: none;
+
+        &:hover {
+            color: rgb(var(--color-primary));
+        }
+    }
+
+    &__current {
+        font-size: var(--font-size-l);
+        font-weight: 500;
+    }
+
+    &__week {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        padding: var(--spacer-xs) 0;
+        background-color: rgb(var(--color-primary));
+
+        .widget-calendar__day {
+            color: rgb(var(--color-inverse));
+        }
+    }
+
+    &__days {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        padding: var(--spacer-xs) 0;
+    }
+
+    &__item {
+
+    }
+
+    &__day {
+        text-align: center;
+        text-decoration: none;
+        width: rem(28px);
+        height: rem(28px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto;
+        border-radius: 50%;
+        color: rgb(var(--color-base));
+
+        &--active {
+            background-color: rgb(var(--color-primary));
+            color: rgb(var(--color-inverse));
+        }
+
+        &--not-current {
+            opacity: 0.7;
+        }
+    }
+}

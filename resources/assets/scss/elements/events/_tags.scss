@@ -1,0 +1,19 @@
+.event-tags {
+    &__item {
+        text-decoration: none;
+        color: rgb(var(--color-base));
+        background-color: rgb(var(--color-accent-light));
+        display: inline-block;
+        padding: var(--spacer-xs) var(--spacer-s);
+        border-radius: var(--spacer-s);
+        text-transform: uppercase;
+        font-size: var(--font-size-s);
+        margin-bottom: var(--spacer-xs);
+        margin-right: var(--spacer-xs);
+
+        &:hover {
+            color: rgb(var(--color-inverse));
+            background-color: rgb(var(--color-primary-light));
+        }
+    }
+}

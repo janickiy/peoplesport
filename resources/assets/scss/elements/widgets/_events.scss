@@ -1,0 +1,17 @@
+.widget-events {
+    &__heading {
+
+    }
+
+    &__list {
+
+    }
+}
+
+.widget-events-list {
+    &__item {
+        & + & {
+            margin-top: var(--spacer-x);
+        }
+    }
+}

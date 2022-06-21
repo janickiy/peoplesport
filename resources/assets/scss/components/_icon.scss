@@ -1,0 +1,75 @@
+.icon {
+    font-family: var(--font-family-icon);
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+
+    &--brand {
+        font-family: var(--font-family-icon-brand);
+    }
+
+    &--light {
+        font-weight: 300;
+    }
+
+    &--solid {
+        font-weight: 900;
+    }
+
+    &--vk:before { content: unquote-content(\f189) }
+    &--odnoklassniki:before { content: unquote-content(\f263) }
+    &--twitter:before { content: unquote-content(\f099) }
+    &--odnoklassniki:before { content: unquote-content(\f263) }
+    &--facebook-f:before { content: unquote-content(\f39e) }
+
+    &--bell:before { content: unquote-content(\f0f3) }
+    &--rocket:before { content: unquote-content(\f135) }
+    &--search:before { content: unquote-content(\f002) }
+    &--lock-alt:before { content: unquote-content(\f30d) }
+    &--angle-double-left:before { content: unquote-content(\f100) }
+    &--angle-double-right:before { content: unquote-content(\f101) }
+    &--angle-left:before { content: unquote-content(\f104) }
+    &--angle-right:before { content: unquote-content(\f105) }
+    &--angle-up:before { content: unquote-content(\f106) }
+    &--angle-down:before { content: unquote-content(\f107) }
+    &--bars:before { content: unquote-content(\f0c9) }
+    &--plus:before { content: unquote-content(\f067) }
+    &--plus-square:before { content: unquote-content(\f0fe) }
+    &--times-circle:before { content: unquote-content(\f057) }
+    &--question-circle:before { content: unquote-content(\f059) }
+    &--check:before { content: unquote-content(\f00c) }
+    &--long-arrow-left:before { content: unquote-content(\f177) }
+    &--long-arrow-right:before { content: unquote-content(\f178) }
+    &--calendar-alt:before { content: unquote-content(\f073) }
+    &--clock:before { content: unquote-content(\f017) }
+    &--share:before { content: unquote-content(\f064) }
+    &--user-plus:before { content: unquote-content(\f234) }
+    &--user-circle:before { content: unquote-content(\f2bd) }
+    &--user-edit:before { content: unquote-content(\f4ff) }
+    &--ban:before { content: unquote-content(\f05e) }
+    &--heart:before { content: unquote-content(\f004) }
+    &--comment:before { content: unquote-content(\f075) }
+    &--thumbs-up:before { content: unquote-content(\f164) }
+    &--thumbs-down:before { content: unquote-content(\f165) }
+    &--envelope:before { content: unquote-content(\f0e0) }
+    &--phone:before { content: unquote-content(\f095) }
+    &--fax:before { content: unquote-content(\f1ac) }
+    &--video-plus:before { content: unquote-content(\f4e1) }
+    &--fire:before { content: unquote-content(\f06d) }
+    &--comments-alt:before { content: unquote-content(\f4b6) }
+    &--sticky-note:before { content: unquote-content(\f249) }
+    &--trophy-alt:before { content: unquote-content(\f2eb) }
+    &--send:before { content: unquote-content(\f1d8) }
+    &--camera:before { content: unquote-content(\f030) }
+    &--smile:before { content: unquote-content(\f118) }
+    &--wallet:before { content: unquote-content(\f555) }
+    &--bell:before { content: unquote-content(\f0f3) }
+    &--cog:before { content: unquote-content(\f013) }
+    &--mail-bulk:before { content: unquote-content(\f674) }
+    &--exclamation-triangle:before { content: unquote-content(\f071) }
+    &--reply:before { content: unquote-content(\f3e5) }
+}

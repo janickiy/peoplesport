@@ -1,0 +1,7 @@
+.content {
+    @extend %typography-base;
+
+    &--inverse {
+        @extend %typography-inverse;
+    }
+}

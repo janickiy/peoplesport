@@ -1,0 +1,30 @@
+.splide {
+    &__pagination {
+        z-index: 1;
+        padding: var(--spacer) 0 0 0;
+        text-align: center;
+
+        &__page {
+            display: inline-block;
+            width: $dot-size;
+            height: $dot-size;
+            background: transparent;
+            border-radius: 50%;
+            border: rem(1px) solid rgb(var(--color-base-light));
+            margin: rem(3px);
+            padding: 0;
+
+            &.is-active {
+                background-color: rgb(var(--color-base-light));
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}

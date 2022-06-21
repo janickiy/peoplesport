@@ -1,0 +1,137 @@
+.user-dialog {
+    &__back {
+        color: rgb(var(--color-primary));
+        text-decoration: none;
+    }
+
+    &__login {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    &__meta {
+        text-align: center;
+        color: rgb(var(--color-neutral));
+    }
+
+    &__name {
+        font-weight: 500;
+        margin-bottom: var(--spacer-xs);
+        margin-right: var(--spacer);
+    }
+
+    &__nickname {
+        margin-bottom: var(--spacer-xs);
+
+        a {
+            color: rgb(var(--color-primary));
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        span {
+            color: rgb(var(--color-primary));
+        }
+    }
+
+    &__avatar {
+        display: block;
+        height: rem(70px);
+        width: rem(70px);
+        border: rem(1px) solid rgb(var(--color-neutral));
+        border-radius: 50%;
+    }
+
+    &__status {
+        width: rem(10px);
+        height: rem(10px);
+        position: absolute;
+        top: rem(60px);
+        right: rem(3px);
+        border-radius: 50%;
+        background-color: rgb(var(--color-neutral));
+
+        &--online {
+            background-color: rgb(var(--color-online));
+        }
+    }
+}
+
+.user-dialog-heading {
+    display: flex;
+    align-items: center;
+    border-bottom: rem(1px) solid rgba(var(--color-neutral), .5);
+    padding: var(--spacer-x) 0;
+    margin-bottom: var(--spacer-x);
+
+    &__left {
+        margin-right: auto;
+    }
+
+    &__middle {
+        display: none;
+    }
+
+    &__right {
+
+    }
+}
+
+.user-dialog-messages {
+    &__list {
+        display: flex;
+        flex-direction: column;
+        max-height: 80vh;
+        overflow: auto;
+    }
+
+    &__control {
+        position: sticky;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+.user-dialog-item {
+    padding: var(--spacer-s) var(--spacer);
+    background-color: rgb(var(--color-neutral-light));
+    border: rem(1px) solid rgb(var(--color-neutral));
+    margin-bottom: var(--spacer);
+    border-radius: rem(4px);
+    display: flex;
+    align-self: flex-start;
+    font-size: var(--font-size-s);
+    max-width: calc(100% - var(--spacer-x));
+
+    &--my {
+        align-self: flex-end;
+
+        background-color: rgb(var(--color-accent-light));
+        border: rem(1px) solid rgb(var(--color-neutral));
+    }
+
+    &__content {
+
+    }
+
+    &__time {
+        margin-left: var(--spacer);
+        font-weight: 300;
+    }
+}
+
+@include breakpoint('sm') {
+    .user-dialog-heading {
+        &__middle {
+            display: block;
+        }
+
+        &__right {
+            margin-left: auto;
+        }
+    }
+}

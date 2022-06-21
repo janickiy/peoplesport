@@ -1,0 +1,7 @@
+.aside {
+    &__widget {
+        & + & {
+            margin-top: var(--spacer-x);
+        }
+    }
+}

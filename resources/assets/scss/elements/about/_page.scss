@@ -1,0 +1,23 @@
+.about-page {
+    &__banner {
+        font-family: var(--font-family-heading);
+        margin-bottom: var(--spacer-x);
+    }
+
+    &__content {
+        text-align: center;
+        border-bottom: rem(1px) solid rgb(var(--color-neutral));
+        padding-bottom: var(--spacer-x);
+        margin-bottom: var(--spacer-x);
+    }
+
+    &__capabilities {
+        border-bottom: rem(1px) solid rgb(var(--color-neutral));
+        padding-bottom: var(--spacer-x);
+        margin-bottom: var(--spacer-x);
+    }
+
+    &__action {
+
+    }
+}

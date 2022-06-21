@@ -1,0 +1,24 @@
+.partners-layout {
+    &__contacts {
+        margin-bottom: var(--spacer-l);
+    }
+
+    &__feedback {
+
+    }
+}
+
+@include breakpoint('lg') {
+    .partners-layout {
+        @include row();
+
+        &__contacts {
+            @include col(6);
+            margin-bottom: 0;
+        }
+
+        &__feedback {
+            @include col(6);
+        }
+    }
+}

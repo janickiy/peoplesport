@@ -1,0 +1,22 @@
+.footer {
+    margin-top: var(--spacer-x);
+    background-color: rgb(var(--color-base));
+    padding: var(--spacer-x) 0;
+    color: rgb(var(--color-inverse));
+
+    &__inner {
+        @include container();
+    }
+
+    &__logotype {
+        margin-bottom: var(--spacer-m);
+    }
+
+    &__copyright {
+        line-height: var(--line-height);
+
+        a {
+            color: rgb(var(--color-inverse));
+        }
+    }
+}

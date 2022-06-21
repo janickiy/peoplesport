@@ -1,0 +1,88 @@
+.button {
+    font-family: var(--font-family);
+    font-size: rem(16px);
+    border: rem(1px) solid;
+    cursor: pointer;
+    padding: rem(14px) rem(34px);
+    border-radius: rem(25px);
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(var(--color-base));
+
+    &:focus {
+        box-shadow: 0 0 0 rem(3px) rgba(var(--color-base), .25);
+    }
+
+    &__label {
+        text-align: center;
+    }
+
+    &__icon {
+        margin-right: var(--spacer-s);
+    }
+
+    &--primary {
+        color: rgb(var(--color-inverse));
+        background-color: rgb(var(--color-primary));
+
+        &:focus {
+            box-shadow: 0 0 0 rem(3px) rgba(var(--color-primary), .25);
+        }
+
+        &:hover {
+            background-color: rgb(var(--color-primary-light));
+        }
+    }
+
+    &--secondary {
+        color: rgb(var(--color-inverse));
+        background-color: rgb(var(--color-secondary));
+
+        &:focus {
+            box-shadow: 0 0 0 rem(3px) rgba(var(--color-secondary), .25);
+        }
+
+        &:hover {
+            background-color: rgb(var(--color-secondary-light));
+        }
+    }
+
+    &--accent {
+        color: rgb(var(--color-base));
+        background-color: rgb(var(--color-accent));
+        border-color: rgb(var(--color-accent));
+
+        &:focus {
+            box-shadow: 0 0 0 rem(3px) rgba(var(--color-accent), .25);
+        }
+
+        &:hover {
+            background-color: rgb(var(--color-accent-light));
+        }
+    }
+
+    &--flat {
+        border-color: transparent;
+        background-color: transparent;
+        width: rem(46px);
+        height: rem(46px);
+        padding: 0;
+
+        &.button--primary {
+            color: rgb(var(--color-inverse));
+            background-color: rgb(var(--color-primary));
+        }
+
+        &:focus {
+            box-shadow: unset;
+        }
+    }
+
+    &--circle {
+        border-radius: 50%;
+    }
+
+    &--s {
+        padding: rem(10px) rem(30px);
+    }
+}

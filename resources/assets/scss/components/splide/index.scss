@@ -1,0 +1,89 @@
+$spinner-size: #{rem(20px)};
+$spinner-border-size: #{rem(2px)};
+$spinner-border-color: rgb(var(--color-neutral-darken));
+
+@import '~@splidejs/splide/src/sass/core/foundation/animations';
+@import '~@splidejs/splide/src/sass/core/foundation/variables';
+
+@import '~@splidejs/splide/src/sass/core/object/modifiers/draggable';
+@import '~@splidejs/splide/src/sass/core/object/modifiers/fade';
+@import '~@splidejs/splide/src/sass/core/object/modifiers/fade';
+@import '~@splidejs/splide/src/sass/core/object/modifiers/ttb';
+
+@import '~@splidejs/splide/src/sass/core/object/objects/container';
+@import '~@splidejs/splide/src/sass/core/object/objects/list';
+@import '~@splidejs/splide/src/sass/core/object/objects/pagination';
+@import '~@splidejs/splide/src/sass/core/object/objects/root';
+@import '~@splidejs/splide/src/sass/core/object/objects/slide';
+@import '~@splidejs/splide/src/sass/core/object/objects/slider';
+@import '~@splidejs/splide/src/sass/core/object/objects/spinner';
+@import '~@splidejs/splide/src/sass/core/object/objects/track';
+
+@import 'theme';
+
+.splide {
+    &--arrows-right {
+        .splide__arrows {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            display: flex;
+        }
+
+        .splide__arrow {
+            width: rem(30px);
+            height: rem(30px);
+            border-radius: 50%;
+            position: relative;
+            transform: unset;
+            right: unset;
+            left: unset;
+            border: rem(1px) solid rgb(var(--color-base));
+
+            svg {
+                width: rem(15px) !important;
+                height: rem(15px) !important;
+            }
+
+            &--next {
+                margin-left: var(--spacer-s);
+            }
+
+            &:hover {
+                background-color: rgb(var(--color-primary));
+
+                svg {
+                    fill: rgb(var(--color-inverse));
+                }
+            }
+        }
+    }
+
+    &--pagination-left {
+        .splide__pagination__page {
+            border: rem(1px) solid rgb(var(--color-base));
+
+            &.is-active {
+                background-color: rgb(var(--color-primary));
+            }
+        }
+    }
+
+    &--pagination-right-abs {
+        .splide__pagination {
+            position: absolute;
+            bottom: var(--spacer);
+            right: var(--spacer);
+            width: 100%;
+            justify-content: flex-end;
+        }
+
+        .splide__pagination__page {
+            border: rem(1px) solid rgb(var(--color-base));
+
+            &.is-active {
+                background-color: rgb(var(--color-primary));
+            }
+        }
+    }
+}

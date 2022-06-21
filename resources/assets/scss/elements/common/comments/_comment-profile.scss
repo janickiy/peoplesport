@@ -1,0 +1,49 @@
+.comment-profile {
+    display: flex;
+    align-items: center;
+
+    &__card {
+        flex-shrink: 0;
+    }
+
+    &__info {
+        margin-left: var(--spacer-s);
+    }
+}
+
+.comment-profile-card {
+    position: relative;
+
+    &__image {
+        display: block;
+        height: rem(40px);
+        width: rem(40px);
+        border-radius: 50%;
+        border: rem(1px) solid rgb(var(--color-neutral));
+    }
+
+    &__status {
+        width: rem(10px);
+        height: rem(10px);
+        position: absolute;
+        bottom: 0;
+        right: rem(3px);
+        border-radius: 50%;
+        background-color: rgb(var(--color-neutral));
+
+        &--online {
+            background-color: rgb(var(--color-online));
+        }
+    }
+}
+
+.comment-profile-info {
+    &__name {
+        color: rgb(var(--color-base));
+        text-decoration: none;
+
+        &:hover {
+            color: rgb(var(--color-primary));
+        }
+    }
+}

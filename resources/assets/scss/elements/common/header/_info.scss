@@ -1,0 +1,25 @@
+.header-info {
+    @include row();
+
+    &__left {
+        @include col(12);
+        display: none;
+    }
+
+    &__right {
+        @include col(12)
+    }
+}
+
+@include breakpoint('lg') {
+    .header-info {
+        &__left {
+            @include col(6);
+            display: initial;
+        }
+
+        &__right {
+            @include col(6)
+        }
+    }
+}

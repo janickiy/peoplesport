@@ -1,0 +1,28 @@
+.user-awards {
+    &__info {
+        margin-bottom: var(--spacer-x);
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    &__list {
+        @include row();
+        margin-bottom: calc(var(--spacer-x) * -1);
+    }
+
+    &__item {
+        @include col(12);
+
+        margin-bottom: var(--spacer-x);
+    }
+}
+
+@include breakpoint('md') {
+    .user-awards {
+        &__item {
+            @include col(6);
+        }
+    }
+}

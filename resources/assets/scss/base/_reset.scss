@@ -1,0 +1,50 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    min-height: 100vh;
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    background: {
+        image: url('../img/site-background.jpg');
+    };
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, ul, ol li, p, blockquote {
+    margin: 0;
+    padding: 0;
+    line-height: var(--line-height);
+}
+
+input, textarea, button {
+    font-family: var(--font-family);
+    border: 0;
+    border-radius: 0;
+    outline: none;
+    appearance: none;
+
+    &:hover, &:active, &:focus {
+        outline: none;
+    }
+}
+
+embed, iframe, img, object, video {
+    max-width: 100%;
+}
+
+hr {
+    border: 0;
+    border-top: rem(1px) solid rgb(var(--color-neutral-light));
+    margin: var(--spacer-l) 0;
+}

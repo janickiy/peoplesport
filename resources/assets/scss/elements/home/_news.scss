@@ -1,0 +1,26 @@
+.home-news {
+    margin-bottom: var(--spacer-x);
+
+    &__content {
+
+    }
+
+    &__aside {
+        display: none;
+    }
+}
+
+@include breakpoint('xl') {
+    .home-news {
+        @include row();
+
+        &__content {
+            @include col(9);
+        }
+
+        &__aside {
+            @include col(3);
+            display: block;
+        }
+    }
+}

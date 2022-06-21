@@ -1,0 +1,17 @@
+.panel {
+    &__inner {
+        padding: var(--spacer-m);
+        background-color: rgb(var(--color-inverse));
+        box-shadow: 0 0 rem(10px) rem(2px) rgba(var(--color-shadow), .1);
+    }
+
+    &--without-padding {
+        .panel__inner {
+            padding: 0;
+        }
+    }
+
+    &--space {
+        margin-bottom: var(--spacer-x);
+    }
+}

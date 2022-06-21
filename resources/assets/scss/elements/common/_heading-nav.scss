@@ -1,0 +1,99 @@
+.heading-nav {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: var(--spacer);
+
+    &:after {
+        content: '';
+        display: block;
+        height: rem(1px);
+        width: 100%;
+        background-color: rgb(var(--color-neutral-light));
+        position: absolute;
+        left: 0;
+        bottom: calc(var(--spacer) - #{rem(1px)});
+    }
+
+    &__left {
+        margin-right: auto;
+        padding-right: var(--spacer);
+        margin-bottom: var(--spacer);
+    }
+
+    &__right {
+        margin-bottom: var(--spacer);
+        text-align: right;
+        display: none;
+    }
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: flex-end;
+        height: 100%;
+    }
+
+    &__item {
+        position: relative;
+        padding: var(--spacer);
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.heading-nav-item {
+    position: relative;
+
+    &__link {
+        display: block;
+        color: rgb(var(--color-base));
+        text-decoration: none;
+        position: relative;
+
+        &:hover {
+            color: rgb(var(--color-primary));
+        }
+    }
+
+    &:after {
+        content: '';
+        display: none;
+        height: rem(3px);
+        width: calc(100% - var(--spacer-x));
+        background-image: var(--brand-gradient);
+        position: absolute;
+        left: calc(var(--spacer-x) / 2);
+        bottom: 0;
+    }
+
+    &__icon {
+        color: rgb(var(--color-accent));
+        margin-right: var(--spacer-s);
+    }
+
+    &__label {
+
+    }
+
+    &--active {
+        .heading-nav-item__link {
+            color: rgb(var(--color-primary));
+        }
+
+        &:after {
+            display: block;
+        }
+    }
+}
+
+@include breakpoint('xl') {
+    .heading-nav {
+        &__right {
+            display: block;
+        }
+    }
+}

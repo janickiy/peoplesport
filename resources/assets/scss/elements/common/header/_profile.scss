@@ -1,0 +1,123 @@
+.header-profile {
+    color: rgb(var(--color-inverse));
+    position: relative;
+
+    &__trigger {
+
+    }
+
+    &__popover {
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        top: calc(100% + #{rem(10px)});
+        right: 0;
+        z-index: 2;
+    }
+
+    &--open {
+        .header-profile__popover {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .header-profile-card:after {
+            transform: translateY(-50%) scale(-1);
+        }
+    }
+
+    &__card {
+        // margin: calc(var(--spacer) * -1) 0;
+        // padding: var(--spacer) 0;
+    }
+
+    &__menu {
+        width: 100%;
+        box-shadow: 0 rem(3px) rem(7px) rem(1px) rgba(var(--color-shadow), .15);
+    }
+}
+
+.header-profile-card {
+    display: flex;
+    align-items: center;
+    width: rem(220px);
+    position: relative;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-decoration: none;
+    color: rgb(var(--color-inverse));
+
+    &:hover {
+        color: rgb(var(--color-accent));
+    }
+
+    &:after {
+        content: unquote-content(\f107);
+        font-family: $font-family-icon;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        transform-origin: center;
+        background-color: rgba(var(--color-base));
+    }
+
+    &__image {
+        width: rem(20px);
+        height: rem(20px);
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    &__name {
+        margin-left: var(--spacer-s);
+        padding-right: var(--spacer-m);
+    }
+}
+
+.header-profile-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(var(--color-base));
+
+
+    &__item {
+
+    }
+}
+
+.header-profile-menu-item {
+    font-size: var(--font-size-s);
+
+    &--sep {
+        &:before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: rem(1px);
+            background-color: rgba(var(--color-neutral-light), .2);
+            margin: var(--spacer-xs) 0 0 0;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        color: rgb(var(--color-inverse));
+        padding: var(--spacer-xs) var(--spacer-s);
+        display: block;
+
+        &:hover {
+            color: rgb(var(--color-accent));
+        }
+    }
+
+    &__icon {
+        margin-right: var(--spacer-s);
+    }
+
+    &__info {
+        float: right;
+    }
+}

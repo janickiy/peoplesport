@@ -1,0 +1,54 @@
+.user-questionnaire {
+    &__info {
+        margin-bottom: var(--spacer);
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    &__list {
+        margin-bottom: calc(var(--spacer) * -1);
+    }
+
+    &__item {
+        margin-bottom: var(--spacer);
+    }
+}
+
+.user-questionnaire-item {
+    @include row();
+
+    &__label {
+        @include col(12);
+        line-height: var(--line-height);
+    }
+
+    &__value {
+        @include col(12);
+    }
+}
+
+@include breakpoint('md') {
+    .user-questionnaire-item {
+        &__label {
+            @include col(4)
+        }
+
+        &__value {
+            @include col(8)
+        }
+    }
+}
+
+@include breakpoint('lg') {
+    .user-questionnaire-item {
+        &__label {
+            @include col(3)
+        }
+
+        &__value {
+            @include col(9)
+        }
+    }
+}

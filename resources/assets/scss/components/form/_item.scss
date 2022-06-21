@@ -1,0 +1,111 @@
+.form-item {
+    margin-bottom: var(--spacer-m);
+    position: relative;
+
+    &__label {
+        font-size: var(--font-size-s);
+        margin-bottom: var(--spacer-xs);
+        display: block;
+    }
+
+    &__info {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    &__group {
+        position: relative;
+
+        &--icon-left {
+            .form-item__control {
+                padding-left: calc(var(--spacer) * 3);
+            }
+        }
+
+        &--icon-right {
+            .form-item__control {
+                padding-right: calc(var(--spacer) * 3);
+            }
+        }
+
+        &--right {
+
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        left: var(--spacer);
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgb(var(--color-base));
+
+        &--right {
+            left: unset;
+            right: var(--spacer);
+        }
+    }
+
+    &__right {
+        position: absolute;
+        right: var(--spacer);
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgb(var(--color-base));
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    &__control {
+        font-family: var(--font-family);
+        font-size: var(--font-size);
+        //height: rem(44px);
+        border: rem(1px) solid rgb(var(--color-base));
+        border-radius: rem(3px);
+        display: block;
+        width: 100%;
+        padding: calc(var(--spacer-s) + #{rem(1px)}) var(--spacer);
+
+        &:focus {
+            outline: 0;
+            border-color: rgb(var(--color-primary));
+            box-shadow: 0 0 0 rem(3px) rgba(var(--color-primary), .25);
+        }
+
+        &--textarea {
+            resize: none;
+            height: initial;
+        }
+
+        &--editor {
+            .ck-editor__editable {
+                height: rem(200px);
+            }
+        }
+
+        &--invalid {
+            border-color: rgb(var(--color-danger));
+        }
+    }
+
+    &--required {
+        .form-item__label {
+            &:before {
+                content: '*';
+                margin-right: var(--spacer-xs);
+                color: rgb(var(--color-primary));
+            }
+        }
+    }
+
+    &--last {
+        margin-bottom: 0;
+    }
+
+    &--center {
+        text-align: center;
+    }
+}

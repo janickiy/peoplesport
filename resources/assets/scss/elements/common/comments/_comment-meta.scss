@@ -1,0 +1,44 @@
+.comment-meta {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+        & + & {
+            margin-left: var(--spacer);
+        }
+    }
+}
+
+.comment-meta-item {
+    color: rgb(var(--color-neutral-darken));
+
+    &__icon {
+        &--like {
+            color: rgb(var(--color-like));
+        }
+
+        &--comment {
+            color: rgb(var(--color-comment));
+        }
+    }
+
+    &__value {
+        margin-left: var(--spacer-xs);
+    }
+
+    &__link {
+        color: rgb(var(--color-neutral-darken));
+        text-decoration: none;
+
+        &:hover {
+            color: rgb(var(--color-base))
+        }
+    }
+
+    &--right {
+        margin-left: auto !important;
+    }
+}

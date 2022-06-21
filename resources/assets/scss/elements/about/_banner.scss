@@ -1,0 +1,48 @@
+.about-banner {
+    padding: var(--spacer-l) var(--spacer-xs);
+    background: {
+        image: url('../img/about-banner-background.png');
+        repeat: no-repeat;
+        size: cover;
+    };
+
+    &__text {
+        font-size: rem(20px);
+        font-weight: 700;
+        text-align: center;
+        text-shadow: 0 rem(2px) rem(12px) rgba(var(--color-shadow), .27);
+        color: rgb(var(--color-inverse));
+    }
+}
+
+@include breakpoint('sm') {
+    .about-banner {
+        &__text {
+            font-size: rem(25px);
+        }
+    }
+}
+
+@include breakpoint('md') {
+    .about-banner {
+        &__text {
+            font-size: rem(30px);
+        }
+    }
+}
+
+@include breakpoint('lg') {
+    .about-banner {
+        &__text {
+            font-size: rem(40px);
+        }
+    }
+}
+
+@include breakpoint('xl') {
+    .about-banner {
+        &__text {
+            font-size: rem(50px);
+        }
+    }
+}

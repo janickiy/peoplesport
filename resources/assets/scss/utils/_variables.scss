@@ -1,0 +1,45 @@
+// base
+$font-size-x: 22px !default;
+$font-size-l: 20px !default;
+$font-size-m: 18px !default;
+$font-size: 16px !default;
+$font-size-s: 14px !default;
+$font-size-xs: 12px !default;
+$font-family: 'Roboto', Arial, sans-serif !default;
+$font-family-heading: 'Oswald', serif !default;
+$font-family-icon: 'Font Awesome 5 Pro' !default;
+$font-family-icon-brand: 'Font Awesome 5 Brands' !default;
+$line-height: 1.5 !default;
+
+$heading-size-h1: 30px;
+$heading-size-h2: 26px;
+$heading-size-h3: 23px;
+$heading-size-h4: 18px;
+
+$spacer-x: 30px !default;
+$spacer-l: 25px !default;
+$spacer-m: 20px !default;
+$spacer: 15px !default;
+$spacer-s: 10px !default;
+$spacer-xs: 5px !default;
+
+// container
+$container-offset: 30px !default;
+$container-breakpoints: (
+    xs: 350px,
+    sm: 560px,
+    md: 750px,
+    lg: 990px,
+    xl: 1200px,
+) !default;
+$container-sizes: (
+    xs: map-get($container-breakpoints, xs) - $container-offset,
+    sm: map-get($container-breakpoints, sm) - $container-offset,
+    md: map-get($container-breakpoints, md) - $container-offset,
+    lg: map-get($container-breakpoints, lg) - $container-offset,
+    xl: map-get($container-breakpoints, xl) - $container-offset,
+) !default;
+
+// grid
+$grid-columns: 12 !default;
+$grid-gutter: 30px !default;

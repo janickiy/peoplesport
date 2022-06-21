@@ -1,0 +1,44 @@
+.awards-item {
+    padding-left: rem(70px);
+    position: relative;
+
+    &__icon {
+        position: absolute;
+        display: block;
+        left: 0;
+        top: 0;
+    }
+
+    &__category-icon {
+        position: absolute;
+        display: block;
+        left: rem(25px);
+        top: rem(30px);
+    }
+
+    &__title {
+        font-weight: 700;
+        margin-bottom: var(--spacer-s);
+    }
+
+    &__description {
+        font-size: var(--font-size-s);
+        margin-bottom: var(--spacer-s);
+    }
+
+    &__category {
+        font-size: var(--font-size-s);
+        margin-bottom: var(--spacer-s);
+        border-radius: rem(20px);
+        background-color: rgb(var(--color-base));
+        color: rgb(var(--color-inverse));
+        padding: var(--spacer-xs) var(--spacer-m);
+        display: inline-block;
+        text-transform: uppercase;
+    }
+
+    &__counter {
+        font-size: var(--font-size-s);
+        font-style: italic;
+    }
+}

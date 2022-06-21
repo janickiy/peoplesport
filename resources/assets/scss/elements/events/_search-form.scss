@@ -1,0 +1,21 @@
+.events-search-form {
+    &__layout {
+        @include row();
+    }
+
+    &__col {
+        @include col(12);
+    }
+
+    &__action {
+        text-align: right;
+    }
+}
+
+@include breakpoint('md') {
+    .events-search-form {
+        &__col {
+            @include col(4);
+        }
+    }
+}

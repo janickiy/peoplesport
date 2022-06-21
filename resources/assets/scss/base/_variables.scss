@@ -1,0 +1,54 @@
+:root {
+    --color-base: #{hexToRGB($color-base)};
+    --color-inverse: #{hexToRGB($color-inverse)};
+    --color-primary-light: #{hexToRGB($color-primary-light)};
+    --color-primary: #{hexToRGB($color-primary)};
+    --color-secondary: #{hexToRGB($color-secondary)};
+    --color-secondary-light: #{hexToRGB($color-secondary-light)};
+    --color-accent: #{hexToRGB($color-accent)};
+    --color-accent-light: #{hexToRGB($color-accent-light)};
+    --color-neutral-light: #{hexToRGB($color-neutral-light)};
+    --color-neutral: #{hexToRGB($color-neutral)};
+    --color-neutral-darken: #{hexToRGB($color-neutral-darken)};
+    --color-success: #{hexToRGB($color-success)};
+    --color-success-light: #{hexToRGB($color-success-light)};
+    --color-success-darken: #{hexToRGB($color-success-darken)};
+    --color-danger: #{hexToRGB($color-danger)};
+    --color-danger-light: #{hexToRGB($color-danger-light)};
+    --color-danger-darken: #{hexToRGB($color-danger-darken)};
+    --color-like: #{hexToRGB($color-like)};
+    --color-comment: #{hexToRGB($color-comment)};
+    --color-online: #{hexToRGB($color-online)};
+    --color-promo: #{hexToRGB($color-promo)};
+
+    --color-shadow: #{hexToRGB($color-shadow)};
+
+    --brand-gradient: linear-gradient(-66deg, rgb(var(--color-primary)) 35%, rgb(var(--color-secondary)) 100%);
+
+    --font-size-x: #{rem($font-size-x)};
+    --font-size-l: #{rem($font-size-l)};
+    --font-size-m: #{rem($font-size-m)};
+    --font-size: #{rem($font-size)};
+    --font-size-s: #{rem($font-size-s)};
+    --font-size-xs: #{rem($font-size-xs)};
+    --font-family: #{$font-family};
+    --font-family-icon: "#{$font-family-icon}";
+    --font-family-icon-brand: "#{$font-family-icon-brand}";
+    --font-family-heading: #{$font-family-heading};
+    --line-height: #{$line-height};
+
+    --heading-size-h1: #{rem($heading-size-h1)};
+    --heading-size-h2: #{rem($heading-size-h2)};
+    --heading-size-h3: #{rem($heading-size-h3)};
+    --heading-size-h4: #{rem($heading-size-h4)};
+
+    --spacer-x: #{rem($spacer-x)};
+    --spacer-l: #{rem($spacer-l)};
+    --spacer-m: #{rem($spacer-m)};
+    --spacer: #{rem($spacer)};
+    --spacer-s: #{rem($spacer-s)};
+    --spacer-xs: #{rem($spacer-xs)};
+
+    --grid-columns: $grid-columns;
+    --grid-gutter: #{rem($grid-gutter)};
+}

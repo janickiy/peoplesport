@@ -1,0 +1,35 @@
+.commercial {
+    background-color: rgb(var(--color-inverse));
+    position: relative;
+
+    &:before {
+        content: 'Рекламный баннер';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgb(var(--color-neutral));
+        box-shadow: inset 0 0 0 rem(1px) rgb(var(--color-neutral));
+        min-height: rem(200px);
+    }
+
+    &__link {
+        position: relative;
+        z-index: 1;
+        display: block;
+    }
+
+    &__image {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    &--horizontal {
+        &:before {
+            min-height: rem(30px);
+        }
+    }
+}

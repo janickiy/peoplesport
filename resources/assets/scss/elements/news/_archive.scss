@@ -1,0 +1,59 @@
+.news-archive {
+    @include row();
+
+    &__content {
+        @include col(12);
+    }
+
+    &__aside {
+        display: none;
+    }
+}
+
+.news-archive-grid {
+    @include row();
+
+    &__item {
+        @include col(12); // 4
+        margin-bottom: var(--grid-gutter);
+    }
+}
+
+@include breakpoint('sm') {
+    .news-archive-grid {
+        &__item {
+            @include col(6);
+
+            &--full {
+                @include col(12);
+            }
+        }
+    }
+}
+
+@include breakpoint('lg') {
+    .news-archive-grid {
+        &__item {
+            @include col(4);
+
+            &--full {
+                @include col(12);
+            }
+        }
+    }
+}
+
+@include breakpoint('xl') {
+    .news-archive {
+        @include row();
+
+        &__content {
+            @include col(9);
+        }
+
+        &__aside {
+            @include col(3);
+            display: block;
+        }
+    }
+}

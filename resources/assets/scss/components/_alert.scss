@@ -1,0 +1,27 @@
+.alert {
+    padding: rem(15px);
+    margin-bottom: rem(20px);
+    border: rem(1px) solid transparent;
+    border-radius: rem(4px);
+    color: rgb(var(--color-base));
+    background-color: rgb(var(--color-inverse));
+
+    &__content {
+        @extend %typography;
+    }
+
+    &--primary {
+        color: rgb(var(--color-inverse));
+        background-color: rgb(var(--color-primary));
+    }
+
+    &--accent {
+        color: rgb(var(--color-base));
+        background-color: rgb(var(--color-accent));
+    }
+
+    &--danger {
+        color: rgb(var(--color-inverse));
+        background-color: rgb(var(--color-danger));
+    }
+}

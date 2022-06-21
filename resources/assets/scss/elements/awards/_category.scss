@@ -1,0 +1,50 @@
+.awards-category {
+    &__heading {
+        margin-bottom: var(--spacer);
+    }
+
+    &__list {
+        @include row()
+    }
+
+    &__item {
+        @include col(12);
+
+        margin-bottom: var(--spacer-x);
+    }
+
+    &__info {
+        padding-left: rem(50px);
+        position: relative;
+    }
+
+    &__icon {
+        width: rem(34px);
+        height: rem(34px);
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: rem(6px);
+    }
+
+    &__heading {
+
+    }
+}
+
+@include breakpoint('md') {
+    .awards-category {
+        &__item {
+            @include col(6);
+        }
+    }
+}
+
+@include breakpoint('xl') {
+    .awards-category {
+        &__item {
+            @include col(4);
+        }
+    }
+}

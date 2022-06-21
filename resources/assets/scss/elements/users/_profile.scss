@@ -1,0 +1,59 @@
+.user-profile {
+    &__content {
+        &--full {
+
+        }
+    }
+
+    &__aside {
+
+    }
+
+    &__menu {
+        margin-bottom: var(--spacer-x);
+    }
+
+    &__awards {}
+
+    &__questionnaire {}
+
+    &__settings {}
+
+    &__subscriptions {}
+
+    &__subscribers {}
+
+    &__notifications {}
+
+    &__events {}
+
+    &__description {
+        margin-bottom: var(--spacer);
+
+        a {
+            color: rgb(var(--color-primary));
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+@include breakpoint('xl') {
+    .user-profile {
+        @include row();
+
+        &__content {
+            @include col(9);
+
+            &--full {
+                @include col(12);
+            }
+        }
+
+        &__aside {
+            @include col(3);
+        }
+    }
+}

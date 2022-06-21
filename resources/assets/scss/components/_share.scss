@@ -1,0 +1,42 @@
+.share {
+    display: flex;
+    align-items: center;
+
+    &__heading {
+        font-size: var(--font-size-s);
+        margin-right: var(--spacer);
+    }
+
+    &__list {
+
+    }
+}
+
+.share-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+    &__item {
+        & + & {
+            margin-left: var(--spacer);
+        }
+    }
+}
+
+.share-list-item {
+    &__link {
+        display: block;
+        color: rgb(var(--color-neutral));
+        text-decoration: none;
+
+        &:hover {
+            color: rgb(var(--color-primary));
+        }
+    }
+
+    &__icon {
+
+    }
+}

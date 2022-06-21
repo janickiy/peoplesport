@@ -5,24 +5,45 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
-        "php": "^8.0.2",
-        "guzzlehttp/guzzle": "^7.2",
-        "laravel/framework": "^9.11",
-        "laravel/sanctum": "^2.14.1",
-        "laravel/tinker": "^2.7",
-        "laravelcollective/html": "^6.3",
-        "yajra/laravel-datatables-buttons": "^9.0",
-        "yajra/laravel-datatables-html": "^9.2",
-        "yajra/laravel-datatables-oracle": "^10.0"
+        "php": "^7.4|^8.0",
+        "dillingham/nova-button": "^1.0",
+        "ebess/advanced-nova-media-library": "^3.6",
+        "eminiarts/nova-tabs": "^1.4",
+        "fideloper/proxy": "^4.4",
+        "froala/nova-froala-field": "^3.4",
+        "fruitcake/laravel-cors": "^2.0",
+        "guzzlehttp/guzzle": "^7.0.1",
+        "gwd/seo-meta-nova-field": "^1.2",
+        "kirschbaum-development/nova-inline-relationship": "^0.3.0",
+        "laravel/framework": "^8.40",
+        "laravel/nova": "*",
+        "laravel/tinker": "^2.5",
+        "mostafaznv/nova-ckeditor": "^1.0",
+        "optimistdigital/nova-menu-builder": "^5.3",
+        "optimistdigital/nova-settings": "^3.5.3",
+        "orlyapps/nova-belongsto-depend": "^3.0",
+        "pktharindu/nova-permissions": "^2.1",
+        "spatie/nova-translatable": "^3.0",
+        "tabuna/breadcrumbs": "^2.3",
+        "timothyasp/nova-color-field": "^1.0",
+        "whitecube/nova-flexible-content": "^0.2.9",
+        "yassi/nova-nested-form": "^3.0"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.6",
+        "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
         "laravel/sail": "^1.0.1",
-        "mockery/mockery": "^1.4.4",
-        "nunomaduro/collision": "^6.1",
-        "phpunit/phpunit": "^9.5.10",
-        "spatie/laravel-ignition": "^1.0"
+        "mockery/mockery": "^1.4.2",
+        "nunomaduro/collision": "^5.0",
+        "phpunit/phpunit": "^9.3.3"
     },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "./nova"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "App\\": "app/",
@@ -39,9 +60,6 @@
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
-        ],
-        "post-update-cmd": [
-            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""

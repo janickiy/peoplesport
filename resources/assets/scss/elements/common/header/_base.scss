@@ -1,0 +1,20 @@
+.header {
+    margin-bottom: var(--spacer-x);
+
+    &__inner {
+        @include container();
+    }
+
+    &__info {
+        background-color: rgb(var(--color-base));
+    }
+
+    &__main {
+        background-color: rgb(var(--color-inverse));
+        box-shadow: 0 rem(2px) rem(7px) rem(1px) rgba(var(--color-shadow), .15);
+    }
+
+    &__logotype {
+        padding: var(--spacer) 0;
+    }
+}

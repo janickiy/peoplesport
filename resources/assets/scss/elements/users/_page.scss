@@ -1,0 +1,53 @@
+.users-page {
+    &__search {
+        margin-bottom: var(--spacer-x);
+    }
+
+    &__list {
+
+    }
+}
+
+.users-list-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: var(--spacer-x);
+    grid-row-gap: var(--spacer-x);
+    margin-bottom: var(--spacer-x);
+
+    &__item {
+
+    }
+
+    &--profile {
+
+    }
+}
+
+@include breakpoint('sm') {
+    .users-list-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@include breakpoint('md') {
+    .users-list-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@include breakpoint('lg') {
+    .users-list-grid {
+        grid-template-columns: repeat(7, 1fr);
+    }
+}
+
+@include breakpoint('xl') {
+    .users-list-grid {
+        grid-template-columns: repeat(9, 1fr);
+
+        &--profile {
+            grid-template-columns: repeat(7, 1fr);
+        }
+    }
+}

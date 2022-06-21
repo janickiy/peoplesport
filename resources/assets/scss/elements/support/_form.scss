@@ -1,0 +1,27 @@
+.support-form {
+    @include row();
+
+    &__left {
+        @include col(12)
+    }
+
+    &__right {
+        @include col(12)
+    }
+
+    &__middle {
+        @include col(12)
+    }
+}
+
+@include breakpoint('md') {
+    .support-form {
+        &__left {
+            @include col(6)
+        }
+
+        &__right {
+            @include col(6)
+        }
+    }
+}

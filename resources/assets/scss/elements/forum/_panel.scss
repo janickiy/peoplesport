@@ -1,0 +1,25 @@
+.forum-panel {
+    border: rem(1px) solid rgb(var(--color-neutral));
+
+    &__content {
+        padding: var(--spacer);
+        border-top: rem(1px) solid rgb(var(--color-neutral));
+        font-size: var(--font-size-s);
+        background-color: rgb(var(--color-neutral-light));
+    }
+}
+
+.forum-panel-heading {
+    display: flex;
+    padding: var(--spacer-s) var(--spacer);
+    font-size: var(--font-size-s);
+    background-color: rgb(var(--color-accent));
+
+    &__left {
+        margin-right: auto;
+    }
+
+    &__right {
+        padding-left: var(--spacer);
+    }
+}

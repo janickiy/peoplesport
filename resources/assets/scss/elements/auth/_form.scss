@@ -1,0 +1,55 @@
+.auth-form {
+    &__layout {
+        @include row();
+
+        &--center {
+            align-items: center;
+        }
+    }
+
+    &__col {
+        @include col(12);
+    }
+
+    &__action {
+        @include col(5)
+    }
+
+    &__remember {
+        @include col(7)
+    }
+
+    &__hr {
+        border-top: rem(1px) solid rgba(var(--color-neutral), .5);
+        margin-bottom: var(--spacer);
+    }
+
+    &__forgot-link {
+        font-size: var(--font-size-xs);
+        color: rgb(var(--color-secondary));
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+@include breakpoint('sm') {
+    .auth-form {
+        &__action {
+            @include col()
+        }
+
+        &__remember {
+            @include col()
+        }
+    }
+}
+
+@include breakpoint('md') {
+    .auth-form {
+        &__col {
+            @include col(4)
+        }
+    }
+}
