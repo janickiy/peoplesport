@@ -18,6 +18,7 @@
         "laravel/framework": "^8.40",
         "laravel/nova": "*",
         "laravel/tinker": "^2.5",
+        "laravelcollective/html": "^6.3",
         "mostafaznv/nova-ckeditor": "^1.0",
         "optimistdigital/nova-menu-builder": "^5.3",
         "optimistdigital/nova-settings": "^3.5.3",
@@ -27,6 +28,9 @@
         "tabuna/breadcrumbs": "^2.3",
         "timothyasp/nova-color-field": "^1.0",
         "whitecube/nova-flexible-content": "^0.2.9",
+        "yajra/laravel-datatables-buttons": "*",
+        "yajra/laravel-datatables-html": "*",
+        "yajra/laravel-datatables-oracle": "*",
         "yassi/nova-nested-form": "^3.0"
     },
     "require-dev": {

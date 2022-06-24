@@ -60,7 +60,12 @@ abstract class Resource extends NovaResource
         return parent::relatableQuery($request, $query);
     }
 
-
+    /**
+     * @param NovaRequest $request
+     * @param \Illuminate\Database\Eloquent\Model $model
+     * @param \Illuminate\Support\Collection $fields
+     * @return array
+     */
     protected static function fillFields(NovaRequest $request, $model, $fields)
     {
         if (!static::$relatableEdits) {
@@ -88,6 +93,11 @@ abstract class Resource extends NovaResource
         return $result;
     }
 
+    /**
+     * @param $filter
+     * @param $request
+     * @return array
+     */
     private static function rejectAndFlattenRelation($filter, &$request)
     {
         $input = collect($request->all());

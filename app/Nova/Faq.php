@@ -25,6 +25,10 @@ class Faq extends Resource
         'id', 'title'
     ];
 
+    /**
+     * @param Request $request
+     * @return array
+     */
     public function fields(Request $request)
     {
         return [
@@ -38,31 +42,53 @@ class Faq extends Resource
         ];
     }
 
+    /**
+     * @param Request $request
+     * @return array
+     */
     public function cards(Request $request)
     {
         return [];
     }
 
+    /**
+     * @param Request $request
+     * @return array
+     */
     public function filters(Request $request)
     {
         return [];
     }
 
+    /**
+     * @param Request $request
+     * @return array]
+     */
     public function lenses(Request $request)
     {
         return [];
     }
 
+    /**
+     * @param Request $request
+     * @return array
+     */
     public function actions(Request $request)
     {
         return [];
     }
 
+    /**
+     * @return string
+     */
     public static function label()
     {
         return 'FAQ';
     }
 
+    /**
+     * @return string
+     */
     public static function singularLabel()
     {
         return 'FAQ страница';
