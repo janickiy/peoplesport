@@ -12,13 +12,19 @@ use App\Models\Page\Faq;
 use App\Models\Page\Page;
 use App\Models\Settings;
 use App\Models\User;
+use App\Models\Support;
 use Gwd\SeoMeta\Helper\Seo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
+use URL;
 
 class StaticController extends Controller
 {
-    public function home(Request $request)
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function home()
     {
         $topBloggers = User::orderBy('created_at', 'asc')->paginate(4);
         $news = News::orderBy('created_at', 'asc')->with(['user.occupation', 'user.activityType'])->paginate(10);
@@ -48,7 +54,10 @@ class StaticController extends Controller
         ]);
     }
 
-    public function awards(Request $request)
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function awards()
     {
         $page = new \stdClass();
         $page->title = 'Награды';
@@ -66,6 +75,10 @@ class StaticController extends Controller
         ]);
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function partners(Request $request)
     {
         $page = new \stdClass();
@@ -88,7 +101,10 @@ class StaticController extends Controller
         ]);
     }
 
-    public function faq(Request $request)
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function faq()
     {
         $page = new \stdClass();
         $page->title = 'Вопрос ответ';
@@ -104,6 +120,11 @@ class StaticController extends Controller
         ]);
     }
 
+    /**
+     * @param Request $request
+     * @param $slug
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     */
     public function single(Request $request, $slug)
     {
         if ($page = Page::where('slug', $slug)->first()) {
@@ -113,5 +134,52 @@ class StaticController extends Controller
         }
 
         return response()->view('errors.404', [], 404);
+    }
+
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function support()
+    {
+        $page = new \stdClass();
+        $page->title = 'Служба поддержки';
+        $page->content = '<p>Оставьте Ваше сообщение и контактные данные и наши специалисты свяжутся с Вами<br>
+                           ближайшее рабочее время для решения Вашего вопроса.</p>';
+
+        return view('web.static.support', [
+            'page'  => $page,
+        ]);
+    }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function sendMsg(Request $request)
+    {
+        $rules = [
+            'message' => 'required',
+            'name' => 'required',
+            'email' => 'required|email',
+            'subject' => 'required',
+        ];
+
+        $message = [
+            'name.required' => 'Укажите Ваше имя!',
+            'email.required' => 'Не указан Email!',
+            'email.email' => 'Не верно указан Email!',
+            'message.required' => 'Введите сообщение',
+            'subject.required' => 'Выберите тему обращения!',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $message);
+
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
+
+        Support::create($request->all());
+
+        return redirect(URL::route('support'))->with('success', 'Ваше сообщение успешно отправлено');
     }
 }

@@ -19,6 +19,11 @@ class EventsController extends Controller
         ]);
     }
 
+    /**
+     * @param Request $request
+     * @param $slug
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     */
     public function single(Request $request, $slug)
     {
         if ($event = Event::where('slug', $slug)->first()) {

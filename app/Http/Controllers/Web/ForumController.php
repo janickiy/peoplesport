@@ -12,7 +12,10 @@ use Illuminate\Support\Facades\Auth;
 
 class ForumController extends Controller
 {
-    public function index(Request $request)
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function index()
     {
         $threads = Thread::where('parent_id', null)
             ->get()
@@ -27,6 +30,11 @@ class ForumController extends Controller
         ]);
     }
 
+    /**
+     * @param Request $request
+     * @param $slug
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     */
     public function threads(Request $request, $slug)
     {
         if ($thread = Thread::where('slug', $slug)->first()) {
@@ -41,6 +49,11 @@ class ForumController extends Controller
         return response()->view('errors.404', [], 404);
     }
 
+    /**
+     * @param Request $request
+     * @param $topicId
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     */
     public function topic(Request $request, $topicId)
     {
         if ($topic = Topic::where('id', $topicId)->first()) {
@@ -54,6 +67,11 @@ class ForumController extends Controller
         return response()->view('errors.404', [], 404);
     }
 
+    /**
+     * @param Request $request
+     * @param $topicId
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function createPost(Request $request, $topicId)
     {
         $request->validate([
@@ -72,6 +90,10 @@ class ForumController extends Controller
             ->with('success', 'Ваш комментарий опубликован');
     }
 
+    /**
+     * @param $thread
+     * @return mixed
+     */
     private function threadsGroupByLatter($thread)
     {
         return $thread
@@ -82,6 +104,11 @@ class ForumController extends Controller
             });
     }
 
+    /**
+     * @param $thread
+     * @param string $sort
+     * @return mixed
+     */
     private function topicsByThread($thread, $sort = 'created_at')
     {
         $collections = $thread

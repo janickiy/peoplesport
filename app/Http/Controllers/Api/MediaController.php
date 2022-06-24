@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Storage;
 
 class MediaController extends Controller
 {
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function upload(Request $request)
     {
         $disk = config('media-library.disk_name');

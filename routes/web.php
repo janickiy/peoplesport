@@ -22,6 +22,9 @@ Route::get('/faq', [StaticController::class, 'faq'])->name('static.faq');
 Route::get('/users', [StaticController::class, 'users'])->name('static.users');
 Route::get('/pages/{slug}', [StaticController::class, 'single'])->name('static.single')->where('slug','^[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*$');
 
+Route::get('support', [StaticController::class,'support'])->name('support');
+Route::post('support', [StaticController::class,'sendMsg'])->name('support.sendmsg');
+
 Route::group(['prefix' => 'news', 'as' => 'news.'], function () {
     Route::get('/', [NewsController::class, 'index'])->name('index');
     Route::get('/{slug}', [NewsController::class, 'single'])->name('single')->where('slug','^[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*$');

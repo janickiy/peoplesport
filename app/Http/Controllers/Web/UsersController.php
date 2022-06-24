@@ -9,7 +9,10 @@ use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
-    public function index(Request $request)
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function index()
     {
         $page = new \stdClass();
         $page->title = 'Пользователи';
@@ -24,11 +27,21 @@ class UsersController extends Controller
         ]);
     }
 
+    /**
+     * @param Request $request
+     * @param int $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function profile(Request $request, int $id)
     {
         return response()->redirectToRoute('users.questionnaire', ['id' => $id]);
     }
 
+    /**
+     * @param Request $request
+     * @param int $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     */
     public function questionnaire(Request $request, int $id)
     {
         if ($user = User::with(['gender', 'activityType', 'position', 'occupation'])->find($id)) {
@@ -43,6 +56,11 @@ class UsersController extends Controller
         return response()->view('errors.404', [], 404);
     }
 
+    /**
+     * @param Request $request
+     * @param int $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     */
     public function subscriptions(Request $request, int $id)
     {
         if ($user = User::find($id)) {
@@ -57,6 +75,11 @@ class UsersController extends Controller
         return response()->view('errors.404', [], 404);
     }
 
+    /**
+     * @param Request $request
+     * @param int $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     */
     public function subscribers(Request $request, int $id)
     {
         if ($user = User::find($id)) {
@@ -71,6 +94,11 @@ class UsersController extends Controller
         return response()->view('errors.404', [], 404);
     }
 
+    /**
+     * @param Request $request
+     * @param int $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     */
     public function awards(Request $request, int $id)
     {
         if ($user = User::find($id)) {

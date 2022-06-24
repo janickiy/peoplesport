@@ -9,7 +9,10 @@ use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
-    public function index(Request $request)
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function index()
     {
         $news = News::orderBy('created_at', 'asc')->paginate(12);
 
@@ -19,6 +22,11 @@ class NewsController extends Controller
         ]);
     }
 
+    /**
+     * @param Request $request
+     * @param $slug
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     */
     public function single(Request $request, $slug)
     {
         if ($news = News::where('slug', $slug)->first()) {

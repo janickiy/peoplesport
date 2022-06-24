@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.4|^8.0",
+        "bonecms/laravel-captcha": "^2.2",
         "dillingham/nova-button": "^1.0",
         "ebess/advanced-nova-media-library": "^3.6",
         "eminiarts/nova-tabs": "^1.4",
