@@ -22,8 +22,8 @@
                             </div>
                         @endif
 
-                        <form class="auth-page__form auth-form form" action="{{ route('auth.password.email') }}">
-                            @csrf
+                        {!! Form::open(['url' =>  URL::route('auth.password.email'), 'method' => 'post', 'class' => 'auth-page__form auth-form form']) !!}
+
 
                             <div class="auth-form__layout">
                                 <div class="auth-form__col">
@@ -37,7 +37,9 @@
                             <div class="form-item form-item--last">
                                 <button class="button button--s button--accent" type="submit"><span class="button__label">Отправить ссылку для сброса пароля</span></button>
                             </div>
-                        </form>
+
+                        {!! Form::close() !!}
+
                     </div>
                 </div>
             </div>

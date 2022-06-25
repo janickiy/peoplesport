@@ -30,14 +30,11 @@ class ResetPasswordController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
-    public function showResetForm(Request $request)
+    public function showResetForm($token)
     {
-        $token = $request->route()->parameter('token');
 
         return view('web.auth.passwords.reset', [
-            'seo' => Seo::renderAttributes('Сброс пароля')
-        ])->with(
-            ['token' => $token, 'email' => $request->email]
-        );
+            'seo' => Seo::renderAttributes('Сброс пароля'), 'token' => $token,
+        ]);
     }
 }
